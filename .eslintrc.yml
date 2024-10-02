@@ -10,3 +10,8 @@ rules:
   arrow-parens:
     - warn
     - as-needed
+  no-unused-expressions: off
+  no-sequences: off
+  no-return-assign: off
+ignorePatterns:
+  - "public/javascripts/*.js"
