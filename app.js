@@ -14,7 +14,7 @@ app.get('/password_generator', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.redirect('password_generator')
+  res.redirect('/password_generator')
 })
 
 app.listen(port, () => {
