@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex align-items-center flex-column">
   <div class="container-fluid m-5 p-4 border border-dark" style="width: 60rem">
-    <div class="navbar navbar-expand-lg pb-3 border-bottom">Random Password Generator</div>
+    <div class="navbar navbar-expand-lg pb-3 border-bottom">Random Password Generator<i class="fa-solid fa-key"></i></div>
     <form class="pb-3 pt-3" action="/password_generator/results" method="post">
       <div class="mb-3 d-flex">
         <div class="mb-3" style="width: 20rem">
@@ -59,6 +59,42 @@
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Generate Password</button>
+        {{#if password}}
+        <div class="password">
+          <div>
+            Your Password: <code id="code">{{password}}</code>
+          </div>
+          <button class="button" type="button" onclick="copy()">Copy
+            <span class="material-symbols-outlined">
+              content_copy
+            </span>
+          </button>
+        </div>
+        {{/if}}
     </form>
   </div>
 </div>
+
+<script>
+  function copy() {
+    const copyText = document.getElementById("code").textContent;
+
+    // 使用現代的 clipboard API
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(copyText).then(() => {
+        alert("Password copied to clipboard!");
+      }).catch(err => {
+        console.error("Failed to copy: ", err);
+      });
+    } else {
+      // 如果瀏覽器不支持 clipboard API，則使用後備方法
+      const aux = document.createElement("input");
+      aux.setAttribute("value", copyText);
+      document.body.appendChild(aux);
+      aux.select();
+      document.execCommand("copy");
+      document.body.removeChild(aux);
+      alert("Password copied to clipboard!");
+    }
+  }
+</script>
