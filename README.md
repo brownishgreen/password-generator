@@ -20,7 +20,7 @@ npm run start
 ```
 5. If you see the following message, the server is running successfully:
 ```
-伺服器已運作，監聽在 http://localhost:3000
+express server running on http://localhost:3000
 ```
 6. Open the following URL in your browser to use the application:
 ```
