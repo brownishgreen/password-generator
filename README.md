@@ -1,5 +1,5 @@
 # Password Generator
-![Cover Screenshot](/image/passwordGenerator.png)
+![封面截圖](/public/image/passwordGenerator.png)
 ## Introduction
 This small tool can generate random passwords based on the complexity you need.
 ## Feature
